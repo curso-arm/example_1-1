@@ -3,21 +3,20 @@
 
 int main()
 {
-    DigitalIn gasDetector(USER_BUTTON);
+    DigitalIn button(USER_BUTTON); // esta onectado fisicamete a una R_PullUp
 
-    DigitalOut alarmLed(LED2);
+    DigitalOut led(LED1);
 
-    gasDetector.mode(PullDown);
-
-    alarmLed = OFF;
-
-    while (true) {
-        if ( gasDetector == ON ) {
-            alarmLed = ON;
+    while (true) 
+    {
+        if (button.read() == 0)
+        {
+            led = ON;
+        }
+        else
+        {
+            led = OFF;
         }
         
-        if ( gasDetector == OFF ) {
-            alarmLed = OFF;
-        }
     }
 }
