@@ -3,9 +3,9 @@
 
 int main()
 {
-    DigitalIn gasDetector(D2);
+    DigitalIn gasDetector(USER_BUTTON);
 
-    DigitalOut alarmLed(LED1);
+    DigitalOut alarmLed(LED2);
 
     gasDetector.mode(PullDown);
 
